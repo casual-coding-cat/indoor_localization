@@ -1,0 +1,28 @@
+
+The grid of reference points applied to the operation area includes 166 points with a spacing of 1 meter (see the light-colored dots in the floorplan figure). During the offline phase, the signal strength was measured at reference points for different orientations. We then randomly selected 60 coordinates and orientations for the online phase.
+
+The test environment is equipped with five Linksys / Cisco WRT54GS and 
+four Lancom L-54g access points. All access points support 802.11b and 
+802.11g. One Lancom and all Linksys access points are located on the same 
+floor as our testing area whereas three Lancom access point are located 
+in other places inside the building. The exact position of the access points 
+located inside the testing area is marked by squares in the floor plan.
+
+
+OFFLINE:
+
+configuration: During the offline phase, the signal strength was measured at reference points for different orientations. We collected 110 signal strength measurements at each reference point and for each orientation. This leads to 146,080 measurements for the offline phase. We spent over 10 hours to collect all the data.
+
+format: (format of trace data)
+t="Timestamp"; id="MACofScanDevice"; pos="RealPosition"; degree="orientation"; "MACofResponse1"="SignalStrengthValue","Frequency","Mode"; ... "MACofResponseN"="SignalStrengthValue","Frequency","Mode" t: timestamp in milliseconds since midnight, January 1, 1970 UTC id: MAC address of the scanning device pos: the physical coordinate of the scanning device degree: orientation of the user carrying the scanning device in degrees MAC: MAC address of a responding peer (e.g. an access point or a device in adhoc mode) with the corresponding values for signal strength in dBm, the channel frequency and its mode (access point = 3, device in adhoc mode = 1)
+
+ONLINE
+
+configuration: We randomly selected 60 coordinates and orientations for the online phase. The only condition to select a point inside the testing area as an online set point is that it is surrounded by four reference points. Again, we collected 110 signal strength measurements for each online set point, leading to 6,600 measurements in total.
+
+format: (format of trace data) 
+t="Timestamp"; id="MACofScanDevice"; pos="RealPosition"; degree="orientation"; "MACofResponse1"="SignalStrengthValue","Frequency","Mode"; ... "MACofResponseN"="SignalStrengthValue","Frequency","Mode" 
+t: timestamp in milliseconds since midnight, January 1, 1970 UTC 
+id: MAC address of the scanning device 
+pos: the physical coordinate of the scanning device degree: orientation of the user carrying the scanning device in degrees 
+MAC: MAC address of a responding peer (e.g. an access point or a device in adhoc mode) with the corresponding values for signal strength in dBm, the channel frequency and its mode (access point = 3, device in adhoc mode = 1)
